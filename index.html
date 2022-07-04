@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>线路图生成器</title>
+    <link rel="icon" type="image/png" href="favicon.ico" sizes="56x56">
+    <script src="Pranule.js"></script>
+    <script src="RailMap.js"></script>
+    <script src="Dialog.js"></script>
+    <script src="index.js "></script>
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="stylesheet" href="tech.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h2>线路图生成器</h2>
+    <h3>请注意：这只是Beta版本，可能存在未知bug</h3>
+    <noscript>You need to enable JavaScript to run this web page.</noscript>
+    <div id="data">
+        <select id="stations" multiple="false" size="15" style="width:200px">
+            <option>没有站点</option>
+        </select>
+        <select id="lines" multiple="false" size="15" style="width:200px">
+            <option>没有线路</option>
+        </select>
+        <select id="stationsOnLine" multiple="false" size="15" style="width:200px">
+            <option>未选择线路</option>
+        </select>
+    </div>
+    <div id="controller" style="width:630px;">
+        <button onclick="AddStation()">添加站点</button>
+        <button onclick="AddLine()">添加线路</button>
+        <button onclick="AddStationToLine()">添加站点至线路</button>
+        <button onclick="ModifyStation()">修改站点信息</button>
+        <button onclick="ModifyLine()">修改线路信息</button>
+        <button onclick="DelStation()">删除站点</button>
+        <button onclick="DelLine()">删除线路</button>
+        <button onclick="MoveUp()">上移</button>
+        <button onclick="MoveDown()">下移</button>
+        <button onclick="DelStopFromLine()">从线路中删除站点</button>
+        <button onclick="SplitLine()">拆分线路</button>
+    </div>
+    <div id="mapBorder" style="position:absolute;left:650px;top:50px;width:500px;height:500px;overflow:scroll;">
+        <canvas id="map" width="500" height="500"></canvas>
+    </div>
+</body>
